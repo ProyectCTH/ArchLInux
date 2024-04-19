@@ -1,8 +1,12 @@
 # ArchLInux
-Create my configuratiion for to study
 
-## Add Virtual box 
+Esta es mi configuracion de Archlinux 
+#Install
+Primero debemos virificar el internet para eso usamos el comando ```iwtcl```
 
+
+# Configuraciones adicionales 
+### Add Virtual box 
 Dependencias 
 sudo pacman -S virtualbox-host-modules-arch
 
