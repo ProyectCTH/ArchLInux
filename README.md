@@ -10,6 +10,8 @@ https://h4ckseed.wordpress.com/2020/12/21/iwctl-en-archlinux/
 Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
 
 # Configuraciones adicionales 
+### yay 
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ### Add Virtual box 
 Dependencias 
 sudo pacman -S virtualbox-host-modules-arch
