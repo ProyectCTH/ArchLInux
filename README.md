@@ -102,7 +102,18 @@ sudo pacman -S thunar
 #Configuramos en config.py
 Key([mod], "r", lazy.spawn("thunar")),
 ``` 
-
+Agregamos el gestor de un gestor de brillo Redshift:
+``` 
+sudo pacman -S Redshift
+Key([mod], "r", lazy.spawn("redshift -O 2400")),
+Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
+```
+Agregamos el Screenshot scrot:
+``` 
+sudo pacman -S scrot
+Key([mod], "s", lazy.spawn("scrot")),
+    Key([mod, "shift"], "s", lazy.spawn("scrot -s")),
+``` 
 
 # Configuraciones adicionales 
 ### yay 
