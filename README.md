@@ -1,5 +1,4 @@
 # ArchLInux
-
 Esta es mi configuracion de Archlinux 
 # Install
 ### Internet 
