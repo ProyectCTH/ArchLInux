@@ -4,6 +4,7 @@ Esta es mi configuracion de Archlinux
 ### Internet 
 Primero debemos virificar el internet para eso usamos el comando ```iwtcl```  
 https://h4ckseed.wordpress.com/2020/12/21/iwctl-en-archlinux/
+
 ### Estructura y montaje de las particiones 
 Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
 ### Kernel basico de linux
