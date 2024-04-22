@@ -75,6 +75,35 @@ Por ultimo iniciamos el lightdm
 sudo systemctl enable lightdm
 reboot
 ```
+Despues de esto ya tenemos instados un sistema listo para funcionar con el gestor de ventanas qitile 
+# Configuracion qtile
+Todas las configuraciones lo vamos hacer en .config/qtile/config.py
+Cambiar el terminal por alacritty:
+```
+sudo pacman -S alacritty
+#Configuramos en config.py
+Key([mod], "Return", lazy.spawn("alacritty")),
+```  
+Agregamos el menú como dmenu o rofi:
+``` 
+sudo pacman -S rofi
+#Configuramos en config.py
+Key([mod], "m", lazy.spawn("rofi -show run")),
+Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
+```
+Para cambiar el tema de rofi:
+```
+sudo pacman -S which
+rofi-theme-selector
+```
+Agregamos el gestor de ventanas Thunar: 
+```   
+sudo pacman -S thunar
+#Configuramos en config.py
+Key([mod], "r", lazy.spawn("thunar")),
+``` 
+
+
 # Configuraciones adicionales 
 ### yay 
 ```
