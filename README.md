@@ -113,13 +113,27 @@ Agregamos el Screenshot scrot:
 sudo pacman -S scrot
 Key([mod], "s", lazy.spawn("scrot")),
     Key([mod, "shift"], "s", lazy.spawn("scrot -s")),
-``` 
-
-# Configuraciones adicionales 
-### yay 
 ```
+Agregamos el audios :
+``` 
+sudo pacman -S pavucontrol pulseaudio
+
+```
+# Configuraciones adicionales 
+### AUR helper
+Instalar un AUR helper, por ejemplo yay:
+```
+# Para todo el sistema 
+sudo pacman -S base-devel git
+cd /opt/
+sudo git clone https://aur.archlinux.org/yay-git.git
+sudo chown -R username:username yay-git/
+cd yay-git
+makepkg -si
+# Para solo el usario 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
+
 ### Add Virtual box 
 Dependencias 
 sudo pacman -S virtualbox-host-modules-arch
