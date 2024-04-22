@@ -152,3 +152,8 @@ verificar con groups $USER
 ```
 groups $USER
 ```
+
+### Descargamos nvim o vim
+```
+sudo pacman -S neovim
+```
