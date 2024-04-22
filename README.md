@@ -134,6 +134,7 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 ```
 
 ### Add Virtual box 
+Pagina de referencia https://linuxiac.com/how-to-install-virtualbox-on-arch-linux/
 Dependencias 
 ```
 sudo pacman -S virtualbox-host-modules-arch
@@ -147,4 +148,6 @@ Add your user account to the “vboxusers” group
 sudo usermod -aG vboxusers $USER
 ```
 verificar con groups $USER
-
+```
+groups $USER
+```
