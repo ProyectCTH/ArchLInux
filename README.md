@@ -1,5 +1,30 @@
-# ArchLInux
-Esta es mi configuracion de Archlinux 
+# ArchLinux
+Hola te presento una configuraciòn basica para comenzar en Archlinux siguiendo la guia de la Wiki 
+# Preinstalación
+Lo que se busca aqui es tener las herramientas basicas para comenzar la instalacion, no todos los pasos son necesarios.
+### Lest's go
+- Obtener la imagen ISO: Debes conseguir una imagen de la wiki, lo recomendable es obtenerlo desde el enlace torrent.
+
+  https://archlinux.org/download/
+
+- Verificar las firmas: Para verificar tu imagen solo coloca este comando, y compara la llave. 
+  ```
+  gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
+  ```
+- Preparar un medio de instalacion / arrancar un entorno live: Aqui tienes que preparar un dispositivo para la imagen ISO, vamos usar un USB. Para bootearlo puede usar rufus que es el mejor, pero tambien tienes otras opciones como Balena Etcher.
+  
+- Definiri la configuracion de teclado: Para ver el listado de opciones que tienes solo coloca esto ```ls /usr/share/kbd/keymaps/**/*.map.gz``` , el comando para cambiar es ```loadkeys ``` , vamos a usar el latinoamericano ```loadkeys latam```
+- Verificar la modalidad del arranque: Este paso es importante, porque dependera cuantas particiones vas hacer.
+  ```
+  # Para que sistema tiene coloca esto, si no aparece nada tienes un sistema BIOS en caso contrario tienes UEFI. 
+  ls /sys/firmware/efi/efivars
+  ```
+- Conectarte a internet: Para conectarte 
+  ```
+  ```
+  
+- Actualizar el reloj del sistema
+- Particion, formateo y montaje
 # Install
 ### Internet 
 Primero debemos virificar el internet para eso usamos el comando ```iwtcl```  
