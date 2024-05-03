@@ -157,3 +157,7 @@ groups $USER
 ```
 sudo pacman -S neovim
 ```
+### Descargar torrent 
+```
+sudo pacman -S qbittorrent
+```
