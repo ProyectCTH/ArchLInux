@@ -44,6 +44,25 @@ genfstab -U /mnt >> /mnt/boot/efi
 ```
 arch-chroot /mnt
 ```
+## Time 
+```
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+// generate /etc/adjtime
+hwclock --systohc
+```
+## Localization 
+```
+locale-gen
+// /etc/locale.conf
+LANG=en_US.UTF-8
+// /etc/vconsole.conf
+KEYMAP=de-latin1
+```
+## Network Configuration 
+ingresar al ```/etc/hostname``` y escribir: 
+```
+yourhostname 
+```
 ## Instalacion del grub
 Primero se descarga el grub y despues lo instalamos , por ultimo lo configuramos 
 ```
