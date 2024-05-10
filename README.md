@@ -35,6 +35,9 @@ Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria fla
 ### Kernel basico de linux
 ```
 pacstrap -K /mnt base linux linux-firmware
+o
+pacstrap -K /mnt base base-devel linux linux-firmware networkmanager wpa_supplicant grub 
+
 ```
 ### generar fstab 
 ```
@@ -62,6 +65,18 @@ KEYMAP=de-latin1
 ingresar al ```/etc/hostname``` y escribir: 
 ```
 yourhostname 
+# /etc/hosts
+127.0.0.1 localhost
+::1       localhost
+127.0.0.1 yourhostname.localhost yourhostname
+
+```
+### Instalacion de repositorio paru 
+Creamos una carpeta para nuestro repos ```mkdir -p Desktop/nameuser/repos```
+```
+git clone https://aur.archlinux.org/paru-bin.git
+// ingresamos a /paru-bin/
+makepkg -si
 ```
 ## Instalacion del grub
 Primero se descarga el grub y despues lo instalamos , por ultimo lo configuramos 
@@ -88,7 +103,7 @@ pacman -S sudo
 Edita /etc/sudoers con nano o vim y descomenta la línea con "wheel":
 ```
 ## Uncomment to allow members of group wheel to execute any command
-# %wheel ALL=(ALL) ALL
+%wheel ALL=(ALL) ALL
 ```
 Ahora ya puedes reiniciar:
 ```
@@ -105,7 +120,25 @@ nmcli device wifi list
 # Conéctate a tu red
 nmcli device wifi connect TU_SSID password TU_CONTRASEÑA
 ```
-## Paquetes esenciales para iniciar qtile
+# Instalacion awesome 
+ 
+Como "root" iniciamos el swpa_supplicant aplicando el comando : ```enable wpa_supplicant.service```
+Instalamos xorg con:  ```pacman -S xorg xorg-server```
+Instamos gnome : ```pacman -S gnome``` 
+Iniciar el gdm: ```systemctl enable  gdm.service```
+instalamos gktmn : ```pacman -S gtkmm```
+instalamos open-vm-tools : ```sudo pacman -S open-vm-tools```
+instalamos la targeta de video : ```sudo pacman -S x86-video-vmware x86-input-vmmouse```
+Dominanmos un demonio : ```systemctl enable vmtoolsd```
+
+##ESNABSHOP
+
+Descargamos wget : ```sudo pacman -S wget```
+### shell 
+Instalamos ```sudo pacman -S zsh``` y modificamos como root ```sudo su``` ```usermod --shell /usr/bin/zsh username```
+Aplicamos localectl set-xl1-keymap es
+instalamos locate para ver archivos en el sistema : ```sudo pacman -S locate```
+# Paquetes esenciales para iniciar qtile
 Primero instala el paquete para gestores de ventana
 ```
 sudo pacman -S xorg
@@ -167,7 +200,7 @@ sudo pacman -S pavucontrol pulseaudio
 ### AUR helper
 Instalar un AUR helper, por ejemplo yay:
 ```
-# Para todo el sistema 
+# Para todo el sistema0
 sudo pacman -S base-devel git
 cd /opt/
 sudo git clone https://aur.archlinux.org/yay-git.git
@@ -205,3 +238,12 @@ sudo pacman -S neovim
 ```
 sudo pacman -S qbittorrent
 ```
+# Repositorios de BlackArch
+Creamos una carpeta en ```mdkdir blackarch``` 
+```
+curl -o https://blackarch.org/strap.h
+chmod +x strap.sh
+sudo su
+./strap.sh
+```
+Para ver todos las herramientas que se puede descargar  ```pacman -Sgg | grep blackarch```
