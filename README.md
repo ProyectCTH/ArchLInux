@@ -154,20 +154,9 @@ Descargamos wget : ```sudo pacman -S wget```
 Instalamos ```sudo pacman -S zsh``` y modificamos como root ```sudo su``` ```usermod --shell /usr/bin/zsh username```
 Aplicamos localectl set-xl1-keymap es
 instalamos locate para ver archivos en el sistema : ```sudo pacman -S locate```
-# Paquetes esenciales para iniciar qtile
-Primero instala el paquete para gestores de ventana
-```
-sudo pacman -S xorg
-```
-Despues instalamos qtile con algunas aplicaciones utiles 
-```
-sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox 
-```
-Por ultimo iniciamos el lightdm 
-```
-sudo systemctl enable lightdm
-reboot
-```
+
+
+
 Despues de esto ya tenemos instados un sistema listo para funcionar con el gestor de ventanas qitile 
 
 # Configuraciones adicionales 
