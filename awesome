@@ -1,0 +1,11 @@
+
+# Instalacion awesome 
+ 
+Como "root" iniciamos el swpa_supplicant aplicando el comando : ```enable wpa_supplicant.service```
+Instalamos xorg con:  ```pacman -S xorg xorg-server```
+Instamos gnome : ```pacman -S gnome``` 
+Iniciar el gdm: ```systemctl enable  gdm.service```
+instalamos gktmn : ```pacman -S gtkmm```
+instalamos open-vm-tools : ```sudo pacman -S open-vm-tools```
+instalamos la targeta de video : ```sudo pacman -S x86-video-vmware x86-input-vmmouse```
+Dominanmos un demonio : ```systemctl enable vmtoolsd```
