@@ -153,49 +153,7 @@ sudo systemctl enable lightdm
 reboot
 ```
 Despues de esto ya tenemos instados un sistema listo para funcionar con el gestor de ventanas qitile 
-# Configuracion qtile
-Todas las configuraciones lo vamos hacer en .config/qtile/config.py
-Cambiar el terminal por alacritty:
-```
-sudo pacman -S alacritty
-#Configuramos en config.py
-Key([mod], "Return", lazy.spawn("alacritty")),
-```  
-Agregamos el menú como dmenu o rofi:
-``` 
-sudo pacman -S rofi
-#Configuramos en config.py
-Key([mod], "m", lazy.spawn("rofi -show run")),
-Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
-```
-Para cambiar el tema de rofi:
-```
-sudo pacman -S which
-rofi-theme-selector
-```
-Agregamos el gestor de ventanas Thunar: 
-```   
-sudo pacman -S thunar
-#Configuramos en config.py
-Key([mod], "r", lazy.spawn("thunar")),
-``` 
-Agregamos el gestor de un gestor de brillo Redshift:
-``` 
-sudo pacman -S Redshift
-Key([mod], "r", lazy.spawn("redshift -O 2400")),
-Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
-```
-Agregamos el Screenshot scrot:
-``` 
-sudo pacman -S scrot
-Key([mod], "s", lazy.spawn("scrot")),
-    Key([mod, "shift"], "s", lazy.spawn("scrot -s")),
-```
-Agregamos el audios :
-``` 
-sudo pacman -S pavucontrol pulseaudio
 
-```
 # Configuraciones adicionales 
 ### AUR helper
 Instalar un AUR helper, por ejemplo yay:
