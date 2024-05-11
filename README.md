@@ -201,12 +201,4 @@ sudo pacman -S neovim
 ```
 sudo pacman -S qbittorrent
 ```
-# Repositorios de BlackArch
-Creamos una carpeta en ```mdkdir blackarch``` 
-```
-curl -o https://blackarch.org/strap.h
-chmod +x strap.sh
-sudo su
-./strap.sh
-```
-Para ver todos las herramientas que se puede descargar  ```pacman -Sgg | grep blackarch```
+
