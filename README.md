@@ -18,7 +18,7 @@ Lo que se busca aqui es tener las herramientas basicas para comenzar la instalac
 
 - Preparar un medio de instalacion / arrancar un entorno live: Aqui tienes que preparar un dispositivo para la imagen ISO, vamos usar un USB. Para bootearlo puede usar rufus que es el mejor, pero tambien tienes otras opciones como Balena Etcher.
   
-- Definiri la configuracion de teclado: Para ver el listado de opciones que tienes solo coloca esto ```ls /usr/share/kbd/keymaps/**/*.map.gz``` , el comando para cambiar es ```loadkeys ``` , vamos a usar el latinoamericano ```loadkeys latam```
+- Definir la configuracion de teclado: Para ver el listado de opciones que tienes solo coloca esto ```ls /usr/share/kbd/keymaps/**/*.map.gz``` , el comando para cambiar es ```loadkeys ``` , vamos a usar el latinoamericano ```loadkeys latam```
 
 - Verificar la modalidad del arranque: Este paso es importante, porque dependera cuantas particiones vas hacer.
   ```
@@ -36,7 +36,7 @@ Lo que se busca aqui es tener las herramientas basicas para comenzar la instalac
 
 # Install
 
-### Internet 
+### Internet   
 
 Primero debemos virificar el internet para eso usamos el comando ```iwtcl```  
 
