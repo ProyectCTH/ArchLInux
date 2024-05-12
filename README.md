@@ -90,13 +90,6 @@ yourhostname
 127.0.0.1 yourhostname.localhost yourhostname
 ```
 
-### Instalacion de repositorio paru 
-Creamos una carpeta para nuestro repos ```mkdir -p Desktop/nameuser/repos```
-```
-git clone https://aur.archlinux.org/paru-bin.git
-// ingresamos a /paru-bin/
-makepkg -si
-```
 
 ## Instalacion del grub
 Primero se descarga el grub y despues lo instalamos , por ultimo lo configuramos 
@@ -138,6 +131,15 @@ reboot
 ```
 
 # Post Install
+
+
+### Instalacion de repositorio paru 
+Creamos una carpeta para nuestro repos ```mkdir -p Desktop/nameuser/repos```
+```
+git clone https://aur.archlinux.org/paru-bin.git
+// ingresamos a /paru-bin/
+makepkg -si
+```
 Podemos ingresar al wifi por NetworkManager:
 ```
 # Lista las redes disponibles
