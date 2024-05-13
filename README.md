@@ -1,12 +1,12 @@
 # ArchLinux
 
-Hola te presento una configuraciòn basica para comenzar en Archlinux siguiendo la guia de la Wiki 
+Hola, te presento la guia de instalacion de Archlinux. 
 
 # Preinstalación
 
 Lo que se busca aqui es tener las herramientas basicas para comenzar la instalacion, no todos los pasos son necesarios.
 
-### Lest's go
+## Lest's go
 
 - Obtener la imagen ISO: Debes conseguir una imagen de la wiki, lo recomendable es obtenerlo desde el enlace torrent.
   https://archlinux.org/download/
