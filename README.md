@@ -1,5 +1,6 @@
-# ArchLinux
 [![archtv.png](https://i.postimg.cc/3NtMpVv7/archtv.png)](https://postimg.cc/H88P1SzP)
+
+# ArchLinux
 Hola, te presento la guia de instalacion de Archlinux. 
 
 
