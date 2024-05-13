@@ -2,7 +2,9 @@
 
 Hola, te presento la guia de instalacion de Archlinux. 
 
+
 # Preinstalación
+
 
 Lo que se busca aqui es tener las herramientas basicas para comenzar la instalacion, no todos los pasos son necesarios.
 
@@ -31,8 +33,11 @@ Lo que se busca aqui es tener las herramientas basicas para comenzar la instalac
 ### Estructura y montaje de las particiones 
 Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
 
-### Kernel basico y paquetes 
 
+# Install
+
+En esta parte vamos a imprementar el sistema basico de Archlinux, adempas de descargar  paquetes y configurar nuestro sistema.
+## Kernel basico y paquetes 
 ```
 pacstrap -K /mnt base linux linux-firmware
 o
@@ -49,24 +54,18 @@ Lo que se esta instalando aqui es esto :
 ```
 genfstab -U /mnt >> /mnt/boot/efi
 ```
-# Install
-
-
-
-
 
 ### Ingresar al sistema base 
+Con Esto ya tenemos instalado nuestro sistema base de Archlinux en la carpeta /mnt, solo queda ingresar y hacer magia. 
 ```
 arch-chroot /mnt
 ```
-
 ## Time 
 ```
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 // generate /etc/adjtime
 hwclock --systohc
 ```
-
 ## Localization 
 ```
 locale-gen
@@ -75,7 +74,6 @@ LANG=en_US.UTF-8
 // /etc/vconsole.conf
 KEYMAP=de-latin1
 ```
-
 ## Network Configuration 
 ingresar al ```/etc/hostname``` y escribir: 
 ```
@@ -85,19 +83,16 @@ yourhostname
 ::1       localhost
 127.0.0.1 yourhostname.localhost yourhostname
 ```
-
-
 ## Instalacion del grub
 Primero se descarga el grub y despues lo instalamos , por ultimo lo configuramos 
 ```
-pacman -S grub efibootmgr op-prober
+pacman -S efibootmgr op-prober
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Archlinux
 # en el caso de que haya un error hacerlo por defecto con el siguiente comando
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
 # por ultimo configurar el PATH
 grub-mkconfig -o /boot/grub/grub.cfg 
 ```
-
 ### Creamos usuario y le damos permisos
 Colocamos el password para el root y creamos nuestro usario, dandonle permisos 
 ```
@@ -106,18 +101,16 @@ useradd -m username
 passwd username
 usermod -aG wheel,video,audio,storage username
 ```
-
-Para tener privilegios de superusuario necesitamos sudo:
+### Configuracion del sudo 
+Instalamos sudo.
 ```
 pacman -S sudo
 ```
-
 Edita /etc/sudoers con nano o vim y descomenta la línea con "wheel":
 ```
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ```
-
 Ahora ya puedes reiniciar:
 ```
 # Sal de la imagen ISO, desmóntala y extráela
@@ -125,9 +118,9 @@ exit
 umount -R /mnt
 reboot
 ```
+Con esto lograste instalar Archlinux lo que viene despues es parte de tu imaginacion y tiempo de busqueda, suerte ya eres un linuxero novato lvl -0.
 
 # Post Install
-
 
 ### Instalacion de repositorio paru 
 Creamos una carpeta para nuestro repos ```mkdir -p Desktop/nameuser/repos```
@@ -144,59 +137,4 @@ nmcli device wifi list
 nmcli device wifi connect TU_SSID password TU_CONTRASEÑA
 ```
 
-
-##ESNABSHOP
-
-Descargamos wget : ```sudo pacman -S wget```
-### shell 
-Instalamos ```sudo pacman -S zsh``` y modificamos como root ```sudo su``` ```usermod --shell /usr/bin/zsh username```
-Aplicamos localectl set-xl1-keymap es
-instalamos locate para ver archivos en el sistema : ```sudo pacman -S locate```
-
-
-
-Despues de esto ya tenemos instados un sistema listo para funcionar con el gestor de ventanas qitile 
-
-# Configuraciones adicionales 
-### AUR helper
-Instalar un AUR helper, por ejemplo yay:
-```
-# Para todo el sistema0
-sudo pacman -S base-devel git
-cd /opt/
-sudo git clone https://aur.archlinux.org/yay-git.git
-sudo chown -R username:username yay-git/
-cd yay-git
-makepkg -si
-# Para solo el usario 
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-```
-
-### Add Virtual box 
-Pagina de referencia https://linuxiac.com/how-to-install-virtualbox-on-arch-linux/
-Dependencias 
-```
-sudo pacman -S virtualbox-host-modules-arch
-```
-Instalar Virtual Box 
-```
-sudo pacman -S virtualbox
-```
-Add your user account to the “vboxusers” group
-```
-sudo usermod -aG vboxusers $USER
-```
-verificar con groups $USER
-```
-groups $USER
-```
-
-### Descargamos nvim o vim
-```
-sudo pacman -S neovim
-```
-### Descargar torrent 
-```
-sudo pacman -S qbittorrent
-```
 
