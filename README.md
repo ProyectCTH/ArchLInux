@@ -8,8 +8,7 @@ Lo que se busca aqui es tener las herramientas basicas para comenzar la instalac
 
 ## Lest's go
 
-- Obtener la imagen ISO: Debes conseguir una imagen de la wiki, lo recomendable es obtenerlo desde el enlace torrent.
-  https://archlinux.org/download/
+- Obtener la imagen ISO: Debes conseguir una imagen, lo recomendable es obtenerlo desde el enlace torrent pero descargalo de donde sea contal que lo verifiques esta bien. URL : https://archlinux.org/download/
   
 - Verificar las firmas: Para verificar tu imagen solo coloca este comando, y compara la llave. 
   ```
