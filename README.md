@@ -119,23 +119,10 @@ exit
 umount -R /mnt
 reboot
 ```
-Con esto lograste instalar Archlinux lo que viene despues es parte de tu imaginacion y tiempo de busqueda, suerte ya eres un linuxero novato lvl -0.
+Con esto lograste instalar Archlinux lo que viene despues es parte de tu imaginacion y tiempo de busqueda, suerte ya eres un linuxero novato lvl -0 
 
-# Post Install
 
-### Instalacion de repositorio paru 
-Creamos una carpeta para nuestro repos ```mkdir -p Desktop/nameuser/repos```
-```
-git clone https://aur.archlinux.org/paru-bin.git
-// ingresamos a /paru-bin/
-makepkg -si
-```
-Podemos ingresar al wifi por NetworkManager:
-```
-# Lista las redes disponibles
-nmcli device wifi list
-# Conéctate a tu red
-nmcli device wifi connect TU_SSID password TU_CONTRASEÑA
-```
+Me estaba olvidando inicia tu internet con  ```sudo systemctl start NetworkManager.service``` y para que lo tengas iniciado siempre con ```sudo systemctl start NetworkManager.service```
+
 
 
