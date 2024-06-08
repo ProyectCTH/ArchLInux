@@ -28,11 +28,49 @@ Lo que se busca aqui es tener las herramientas basicas para comenzar la instalac
   # Para que sistema tiene coloca esto, si no aparece nada tienes un sistema BIOS en caso contrario tienes UEFI. 
   ls /sys/firmware/efi/efivars
   ```
-- Conectarte a internet: En este paso usa el comando ```iwctl```. https://h4ckseed.wordpress.com/2020/12/21/iwctl-en-archlinux/ 
+- Conectarte a internet: En este paso usa el comando ```iwctl```. https://h4ckseed.wordpress.com/2020/12/21/iwctl-en-archlinux/
+  ```
+  iwtcl
+  staticon wlan0 connect namewifi
+  lista de wifi : device list
+  scanner wifi: station wlan0 scan
+  lista de redes wifi: station wlan0 get-networks
+  ```
 - Actualizar el reloj del sistema ( opcional ) ( innesario )
 - Particion, formateo y montaje: Vamos realizar este paso para un sistema UEFI, para sistemas BIOS es muy similar pero sin los pasos para de la particion UEFI.  
 ### Estructura y montaje de las particiones 
-Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
+Nota : Los sistemas BIOS son los mas basicos normalmente se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
+## Particion Sistema UEFI 
+vamos a realizar la particon recomendad: 
+
+- particion home  : /home
+- particion raiz : /
+- particion efi (512 M) : /boot/efi
+- particion swap ( = RAM )
+  
+Para particiones vamos a usar ```cfdisk```
+## Formateo de Disco 
+Solo sigue esta estructua y no vas a tener problemas 
+```
+( efi )-> mkfs.fat -F32 /path_efi
+( raiz ) -> mkfs.ext4 /path_raiz
+( home ) -> mkfs.ext4 /path_home
+( swap ) -> mkswap /dev/sda4 
+```
+## Montaje 
+Para el montaje solo sigue estos pasos 
+```
+// Primero, el swap y para comprar que se a montado utiliza el comando, free -h
+swapon /path_swap
+// Segundo, la raiz
+mount /dev/path_raiz /mnt
+// Tercero, efi
+mkdir -p /mnt/boot/efi
+mount /dev/path_efi /mnt/boot/efi
+// Cuarto, home
+mkdir /mnt/home
+mount /dev/path_home /mnt/home
+```
 
 
 # Install
